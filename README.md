@@ -1,10 +1,10 @@
 # Discord MCP Server
 
-Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 60 tools for comprehensive Discord API integration through the MCP protocol.
+Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 71 tools for comprehensive Discord API integration through the MCP protocol.
 
 ## Features
 
-- **60 Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, moderation, emojis, stickers, and scheduled events
+- **71 Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, moderation, emojis, stickers, scheduled events, auto-moderation, and application commands
 - **MCP Protocol Compliant**: Full implementation of Model Context Protocol for AI assistant integration
 - **Persistent Connection**: Robust Discord.js client with automatic reconnection
 - **Production Ready**: TypeScript, comprehensive error handling, structured logging
@@ -130,7 +130,7 @@ npm start
 
 The server will log its startup:
 ```
-{"level":"info","message":"Starting Discord MCP Server","version":"2.0.0-beta","transportMode":"http"}
+{"level":"info","message":"Starting Discord MCP Server","version":"2.0.0","transportMode":"http"}
 {"level":"info","message":"Discord client connected successfully"}
 {"level":"info","message":"MCP Server running on http://localhost:3000/mcp"}
 ```
@@ -204,7 +204,7 @@ const result = await client.callTool({
 4. **Use in Claude Code:**
    - Open Claude Code
    - Type `/mcp` to see available servers
-   - All 60 Discord tools are now available with `mcp__discord-agent__` prefix
+   - All 71 Discord tools are now available with `mcp__discord-agent__` prefix
 
 ### Alternative: Project-Specific Configuration
 
@@ -338,7 +338,7 @@ docker-compose up -d
    curl http://localhost:3000/health
    ```
 
-## Available Tools (60)
+## Available Tools (71)
 
 ### Messaging (10 tools)
 - `send_message` - Send a text message to a channel
@@ -412,13 +412,28 @@ docker-compose up -d
 - `modify_sticker` - Update sticker name, description, or tags
 - `delete_sticker` - Delete a custom sticker
 
-### Scheduled Events (6 tools) 🆕
+### Scheduled Events (6 tools)
 - `list_scheduled_events` - Get all scheduled events for a guild
 - `get_event_details` - Get detailed information about a specific event
 - `create_scheduled_event` - Create Stage, Voice, or External events
 - `modify_scheduled_event` - Update event properties and status
 - `delete_scheduled_event` - Delete or cancel an event
 - `get_event_users` - Get list of users interested in an event
+
+### Auto-Moderation (5 tools) 🆕
+- `list_automod_rules` - Get all auto-moderation rules for a guild
+- `get_automod_rule` - Get detailed information about a specific rule
+- `create_automod_rule` - Create keyword, spam, or mention filtering rules
+- `modify_automod_rule` - Update rule settings, keywords, or actions
+- `delete_automod_rule` - Delete an auto-moderation rule
+
+### Application Commands (6 tools) 🆕
+- `list_application_commands` - List all slash commands (guild or global)
+- `get_application_command` - Get detailed command information
+- `create_application_command` - Create slash commands or context menus
+- `modify_application_command` - Update command properties
+- `delete_application_command` - Delete a slash command
+- `bulk_overwrite_commands` - Sync all commands at once
 
 ### Resources
 - `discord://guilds` - List all guilds the bot is connected to

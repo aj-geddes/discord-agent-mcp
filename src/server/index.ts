@@ -12,6 +12,8 @@ import { registerModerationTools } from "../tools/moderation.js";
 import { registerEmojiTools } from "../tools/emojis.js";
 import { registerStickerTools } from "../tools/stickers.js";
 import { registerScheduledEventTools } from "../tools/scheduled-events.js";
+import { registerAutoModerationTools } from "../tools/automod.js";
+import { registerApplicationCommandTools } from "../tools/application-commands.js";
 import { registerGuildResources } from "../resources/guilds.js";
 import { registerModerationPrompts } from "../prompts/moderation.js";
 import { registerServerSetupPrompts } from "../prompts/server-setup.js";
@@ -65,6 +67,8 @@ async function main() {
   registerEmojiTools(mcpServer, discordManager, logger);
   registerStickerTools(mcpServer, discordManager, logger);
   registerScheduledEventTools(mcpServer, discordManager, logger);
+  registerAutoModerationTools(mcpServer, discordManager, logger);
+  registerApplicationCommandTools(mcpServer, discordManager, logger);
 
   // Register resources
   logger.info("Registering resources...");

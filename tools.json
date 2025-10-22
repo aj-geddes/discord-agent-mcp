@@ -238,5 +238,49 @@
   {
     "name": "get_event_users",
     "description": "Get list of users interested in a scheduled event"
+  },
+  {
+    "name": "list_automod_rules",
+    "description": "Get all auto-moderation rules for a guild"
+  },
+  {
+    "name": "get_automod_rule",
+    "description": "Get detailed information about a specific auto-mod rule"
+  },
+  {
+    "name": "create_automod_rule",
+    "description": "Create a new auto-moderation rule for keyword filtering, spam detection, or content moderation"
+  },
+  {
+    "name": "modify_automod_rule",
+    "description": "Update an existing auto-moderation rule's settings"
+  },
+  {
+    "name": "delete_automod_rule",
+    "description": "Delete an auto-moderation rule from the guild"
+  },
+  {
+    "name": "list_application_commands",
+    "description": "Get all application commands (slash commands) for a guild or globally"
+  },
+  {
+    "name": "get_application_command",
+    "description": "Get detailed information about a specific application command"
+  },
+  {
+    "name": "create_application_command",
+    "description": "Create a new slash command, user context menu, or message context menu command"
+  },
+  {
+    "name": "modify_application_command",
+    "description": "Update an existing application command's properties"
+  },
+  {
+    "name": "delete_application_command",
+    "description": "Delete an application command from the guild or globally"
+  },
+  {
+    "name": "bulk_overwrite_commands",
+    "description": "Replace all application commands with a new set (useful for syncing)"
   }
 ]
