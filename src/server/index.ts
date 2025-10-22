@@ -9,6 +9,8 @@ import { registerMemberTools } from "../tools/members.js";
 import { registerRoleTools } from "../tools/roles.js";
 import { registerServerTools } from "../tools/server.js";
 import { registerModerationTools } from "../tools/moderation.js";
+import { registerEmojiTools } from "../tools/emojis.js";
+import { registerStickerTools } from "../tools/stickers.js";
 import { registerGuildResources } from "../resources/guilds.js";
 import { registerModerationPrompts } from "../prompts/moderation.js";
 import { Logger } from "../utils/logger.js";
@@ -56,6 +58,8 @@ async function main() {
   registerRoleTools(mcpServer, discordManager, logger);
   registerServerTools(mcpServer, discordManager, logger);
   registerModerationTools(mcpServer, discordManager, logger);
+  registerEmojiTools(mcpServer, discordManager, logger);
+  registerStickerTools(mcpServer, discordManager, logger);
 
   // Register resources
   logger.info("Registering resources...");

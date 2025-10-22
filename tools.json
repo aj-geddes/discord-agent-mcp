@@ -182,5 +182,37 @@
   {
     "name": "get_bans",
     "description": "List all banned users in the server"
+  },
+  {
+    "name": "list_guild_emojis",
+    "description": "Get all custom emojis for a guild"
+  },
+  {
+    "name": "create_emoji",
+    "description": "Upload a custom emoji to the guild from base64 image data or file path"
+  },
+  {
+    "name": "modify_emoji",
+    "description": "Update an existing custom emoji's name or role restrictions"
+  },
+  {
+    "name": "delete_emoji",
+    "description": "Delete a custom emoji from the guild"
+  },
+  {
+    "name": "list_guild_stickers",
+    "description": "Get all custom stickers for a guild"
+  },
+  {
+    "name": "create_sticker",
+    "description": "Upload a custom sticker to the guild (PNG, APNG, or Lottie JSON)"
+  },
+  {
+    "name": "modify_sticker",
+    "description": "Update an existing custom sticker's name, description, or tags"
+  },
+  {
+    "name": "delete_sticker",
+    "description": "Delete a custom sticker from the guild"
   }
 ]

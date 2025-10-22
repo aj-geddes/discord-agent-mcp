@@ -1,10 +1,10 @@
 # Discord MCP Server
 
-Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 46+ tools for comprehensive Discord API integration through the MCP protocol.
+Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 54 tools for comprehensive Discord API integration through the MCP protocol.
 
 ## Features
 
-- **46+ Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, and moderation
+- **54 Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, moderation, emojis, and stickers
 - **MCP Protocol Compliant**: Full implementation of Model Context Protocol for AI assistant integration
 - **Persistent Connection**: Robust Discord.js client with automatic reconnection
 - **Production Ready**: TypeScript, comprehensive error handling, structured logging
@@ -338,7 +338,7 @@ docker-compose up -d
    curl http://localhost:3000/health
    ```
 
-## Available Tools (46+)
+## Available Tools (54)
 
 ### Messaging (10 tools)
 - `send_message` - Send a text message to a channel
@@ -399,6 +399,18 @@ docker-compose up -d
 - `timeout_member` - Temporarily mute a member
 - `remove_timeout` - Remove a timeout from a member
 - `get_bans` - List all banned users
+
+### Emoji Management (4 tools) 🆕
+- `list_guild_emojis` - Get all custom emojis for a guild
+- `create_emoji` - Upload a custom emoji from base64 or file path
+- `modify_emoji` - Update emoji name or role restrictions
+- `delete_emoji` - Delete a custom emoji
+
+### Sticker Management (4 tools) 🆕
+- `list_guild_stickers` - Get all custom stickers for a guild
+- `create_sticker` - Upload a custom sticker (PNG/APNG/Lottie)
+- `modify_sticker` - Update sticker name, description, or tags
+- `delete_sticker` - Delete a custom sticker
 
 ### Resources
 - `discord://guilds` - List all guilds the bot is connected to
