@@ -1,0 +1,52 @@
+{
+  "name": "discord-mcp-server",
+  "version": "2.0.0",
+  "description": "Production-ready Discord MCP Server",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server/index.js",
+    "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist",
+    "maintenance": "node content-maintenance/maintenance-cli.js",
+    "audit": "node content-maintenance/maintenance-cli.js audit",
+    "audit:notify": "node content-maintenance/maintenance-cli.js audit --notify",
+    "audit:verbose": "node content-maintenance/maintenance-cli.js audit --verbose",
+    "status": "node content-maintenance/maintenance-cli.js status",
+    "post-update": "node content-maintenance/additive-updater.js"
+  },
+  "keywords": [
+    "discord",
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "bot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "discord.js": "^14.16.3",
+    "express": "^4.21.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.9",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

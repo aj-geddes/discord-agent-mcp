@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Kubernetes secrets
+k8s/secret.yaml
+
+# MCP configuration (may contain local URLs)
+.mcp.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+
+# Internal documentation and planning (not for public repo)
+DEPLOYMENT-STATUS.md
+MCP-ENHANCEMENT-ROADMAP.md
+RESOURCES-PROMPTS-PLAN.md
+SECURITY-CLEANUP.md
+SERVER-CONFIGURATION.md
+TOOL-AUDIT.md
+PUBLIC-REPO-CONTENTS.md
+product-plan.md
+
+# Server-specific content (not for public repo)
+content/
+updates/
+content-maintenance/
