@@ -214,5 +214,29 @@
   {
     "name": "delete_sticker",
     "description": "Delete a custom sticker from the guild"
+  },
+  {
+    "name": "list_scheduled_events",
+    "description": "Get all scheduled events for a guild"
+  },
+  {
+    "name": "get_event_details",
+    "description": "Get detailed information about a specific scheduled event"
+  },
+  {
+    "name": "create_scheduled_event",
+    "description": "Create a new scheduled event (Stage, Voice, or External)"
+  },
+  {
+    "name": "modify_scheduled_event",
+    "description": "Update an existing scheduled event's properties"
+  },
+  {
+    "name": "delete_scheduled_event",
+    "description": "Delete or cancel a scheduled event"
+  },
+  {
+    "name": "get_event_users",
+    "description": "Get list of users interested in a scheduled event"
   }
 ]

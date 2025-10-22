@@ -11,8 +11,12 @@ import { registerServerTools } from "../tools/server.js";
 import { registerModerationTools } from "../tools/moderation.js";
 import { registerEmojiTools } from "../tools/emojis.js";
 import { registerStickerTools } from "../tools/stickers.js";
+import { registerScheduledEventTools } from "../tools/scheduled-events.js";
 import { registerGuildResources } from "../resources/guilds.js";
 import { registerModerationPrompts } from "../prompts/moderation.js";
+import { registerServerSetupPrompts } from "../prompts/server-setup.js";
+import { registerEventPrompts } from "../prompts/events.js";
+import { registerPermissionPrompts } from "../prompts/permissions.js";
 import { Logger } from "../utils/logger.js";
 import { loadConfig } from "./config.js";
 
@@ -60,6 +64,7 @@ async function main() {
   registerModerationTools(mcpServer, discordManager, logger);
   registerEmojiTools(mcpServer, discordManager, logger);
   registerStickerTools(mcpServer, discordManager, logger);
+  registerScheduledEventTools(mcpServer, discordManager, logger);
 
   // Register resources
   logger.info("Registering resources...");
@@ -68,6 +73,9 @@ async function main() {
   // Register prompts
   logger.info("Registering prompts...");
   registerModerationPrompts(mcpServer);
+  registerServerSetupPrompts(mcpServer);
+  registerEventPrompts(mcpServer);
+  registerPermissionPrompts(mcpServer);
 
   // Setup transport based on configuration
   if (config.transportMode === "stdio") {

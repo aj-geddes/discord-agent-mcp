@@ -1,10 +1,10 @@
 # Discord MCP Server
 
-Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 54 tools for comprehensive Discord API integration through the MCP protocol.
+Production-ready Model Context Protocol (MCP) server for AI-assisted Discord management and automation. Provides 60 tools for comprehensive Discord API integration through the MCP protocol.
 
 ## Features
 
-- **54 Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, moderation, emojis, and stickers
+- **60 Discord Tools**: Complete API coverage for messaging, channels, threads, roles, members, moderation, emojis, stickers, and scheduled events
 - **MCP Protocol Compliant**: Full implementation of Model Context Protocol for AI assistant integration
 - **Persistent Connection**: Robust Discord.js client with automatic reconnection
 - **Production Ready**: TypeScript, comprehensive error handling, structured logging
@@ -130,7 +130,7 @@ npm start
 
 The server will log its startup:
 ```
-{"level":"info","message":"Starting Discord MCP Server","version":"2.0.0","transportMode":"http"}
+{"level":"info","message":"Starting Discord MCP Server","version":"2.0.0-beta","transportMode":"http"}
 {"level":"info","message":"Discord client connected successfully"}
 {"level":"info","message":"MCP Server running on http://localhost:3000/mcp"}
 ```
@@ -204,7 +204,7 @@ const result = await client.callTool({
 4. **Use in Claude Code:**
    - Open Claude Code
    - Type `/mcp` to see available servers
-   - All 46+ Discord tools are now available with `mcp__discord-agent__` prefix
+   - All 60 Discord tools are now available with `mcp__discord-agent__` prefix
 
 ### Alternative: Project-Specific Configuration
 
@@ -338,7 +338,7 @@ docker-compose up -d
    curl http://localhost:3000/health
    ```
 
-## Available Tools (54)
+## Available Tools (60)
 
 ### Messaging (10 tools)
 - `send_message` - Send a text message to a channel
@@ -412,12 +412,27 @@ docker-compose up -d
 - `modify_sticker` - Update sticker name, description, or tags
 - `delete_sticker` - Delete a custom sticker
 
+### Scheduled Events (6 tools) 🆕
+- `list_scheduled_events` - Get all scheduled events for a guild
+- `get_event_details` - Get detailed information about a specific event
+- `create_scheduled_event` - Create Stage, Voice, or External events
+- `modify_scheduled_event` - Update event properties and status
+- `delete_scheduled_event` - Delete or cancel an event
+- `get_event_users` - Get list of users interested in an event
+
 ### Resources
 - `discord://guilds` - List all guilds the bot is connected to
 
-### Prompts
+Note: Dynamic guild-specific resources (channels, roles, members) will be added in a future release when MCP SDK supports URI templates. Use the corresponding tools (list_channels, list_roles, list_members, etc.) to access guild-specific data.
+
+### Prompts (8 total) 🆕
 - `moderate-channel` - Interactive channel moderation assistant
 - `create-announcement` - Step-by-step announcement creation guide
+- `setup-server` - Interactive wizard for organizing new server structure
+- `create-scheduled-event` - Guided event creation with timing and type selection
+- `configure-automod-rule` - Auto-moderation rule setup (Phase 3 preview)
+- `audit-permissions` - Security audit and permission analysis
+- `setup-welcome-automation` - Configure welcome messages and auto-roles
 
 ## Configuration
 
