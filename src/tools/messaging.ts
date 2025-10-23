@@ -201,7 +201,9 @@ export function registerMessagingTools(
             description: embed.description || undefined,
             url: embed.url || undefined,
             color: embed.color || undefined,
-            timestamp: embed.timestamp || undefined,
+            timestamp: embed.timestamp
+              ? new Date(embed.timestamp).toISOString()
+              : undefined,
           })),
           reactions: msg.reactions.cache.map((reaction) => ({
             emoji: reaction.emoji.name || reaction.emoji.id || "",
