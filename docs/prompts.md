@@ -30,6 +30,7 @@ Use prompts when you want guided assistance rather than direct tool calls.
 **Purpose:** Interactive channel moderation assistant
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
@@ -61,6 +62,7 @@ Use prompts when you want guided assistance rather than direct tool calls.
 **Purpose:** Step-by-step announcement creation with rich formatting
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `channelId` | string | Target channel |
@@ -106,6 +108,7 @@ Join us for community gaming! We'll be playing...
 **Purpose:** Interactive wizard for organizing new server structure
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
@@ -214,6 +217,7 @@ Join us for community gaming! We'll be playing...
 **Purpose:** Guided event creation wizard
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
@@ -250,6 +254,7 @@ Join us for community gaming! We'll be playing...
 **Purpose:** Set up automatic moderation rules
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
@@ -291,6 +296,7 @@ inappropriate keywords"
 **Purpose:** Security audit of server permissions
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
@@ -352,6 +358,7 @@ RECOMMENDATIONS:
 **Purpose:** Configure welcome messages and auto-roles
 
 **Parameters:**
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `guildId` | string | Server ID |
