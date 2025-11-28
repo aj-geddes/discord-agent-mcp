@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+
+  <!-- SEO Meta Tags -->
+  {% include head-custom.html %}
+
+  <!-- Jekyll SEO Tag -->
+  {% seo %}
+
+  <!-- Cayman Theme Base Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+  <!-- Custom Styles -->
+  <style>
+    /* Discord-inspired design system */
+    :root {
+      --discord-blurple: #5865F2;
+      --discord-blurple-dark: #4752C4;
+      --discord-green: #57F287;
+      --discord-yellow: #FEE75C;
+      --discord-fuchsia: #EB459E;
+      --discord-red: #ED4245;
+      --discord-dark: #2C2F33;
+      --discord-darker: #23272A;
+      --discord-light: #99AAB5;
+    }
+
+    /* Header override */
+    .page-header {
+      background: linear-gradient(135deg, var(--discord-blurple) 0%, var(--discord-blurple-dark) 100%);
+      padding: 2rem 1rem;
+    }
+
+    .project-name {
+      font-size: 2.5rem;
+    }
+
+    .project-tagline {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: var(--discord-darker);
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-container {
+      max-width: 1012px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      justify-content: center;
+    }
+
+    .site-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .site-nav a:hover {
+      background: var(--discord-blurple);
+      color: white;
+    }
+
+    .site-nav a.active {
+      background: var(--discord-blurple);
+    }
+
+    /* Main content */
+    .main-content {
+      max-width: 1012px;
+      padding: 2rem 1rem;
+      margin: 0 auto;
+    }
+
+    .main-content h1 {
+      color: var(--discord-blurple);
+      border-bottom: 2px solid var(--discord-blurple);
+      padding-bottom: 0.5rem;
+    }
+
+    .main-content h2 {
+      color: var(--discord-dark);
+      margin-top: 2rem;
+    }
+
+    .main-content h3 {
+      color: var(--discord-blurple);
+    }
+
+    /* Code blocks */
+    pre {
+      background: var(--discord-darker);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      border: 1px solid #444;
+    }
+
+    pre code {
+      color: #e6e6e6;
+    }
+
+    code {
+      font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+      font-size: 0.9em;
+    }
+
+    :not(pre) > code {
+      background: #f0f0f0;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      color: var(--discord-blurple-dark);
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    thead {
+      background: var(--discord-dark);
+    }
+
+    th {
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e1e4e8;
+    }
+
+    tbody tr:hover {
+      background: #f6f8fa;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Links */
+    a {
+      color: var(--discord-blurple);
+    }
+
+    a:hover {
+      color: var(--discord-blurple-dark);
+    }
+
+    /* Blockquotes */
+    blockquote {
+      border-left: 4px solid var(--discord-blurple);
+      background: #f6f8fa;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    blockquote > p:first-child {
+      margin-top: 0;
+    }
+
+    blockquote > p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid #e1e4e8;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: center;
+      color: var(--discord-light);
+    }
+
+    .site-footer a {
+      color: var(--discord-blurple);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .project-name {
+        font-size: 1.75rem;
+      }
+
+      .nav-container {
+        gap: 0.125rem;
+      }
+
+      .site-nav a {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      th, td {
+        padding: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-nav a {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .site-nav,
+      .page-header {
+        display: none;
+      }
+
+      .main-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header" role="banner">
+    <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+    <h2 class="project-tagline">{{ site.tagline | default: site.description }}</h2>
+    {% if site.github.is_project_page %}
+      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+    {% endif %}
+    {% if site.show_downloads %}
+      <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+      <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+    {% endif %}
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation">
+    <div class="nav-container">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+      <a href="{{ '/getting-started/' | relative_url }}" {% if page.url contains 'getting-started' %}class="active"{% endif %}>Getting Started</a>
+      <a href="{{ '/tools/' | relative_url }}" {% if page.url contains 'tools' %}class="active"{% endif %}>Tools</a>
+      <a href="{{ '/prompts/' | relative_url }}" {% if page.url contains 'prompts' %}class="active"{% endif %}>Prompts</a>
+      <a href="{{ '/deployment/' | relative_url }}" {% if page.url contains 'deployment' %}class="active"{% endif %}>Deployment</a>
+      <a href="{{ '/api/' | relative_url }}" {% if page.url contains 'api' %}class="active"{% endif %}>API</a>
+      <a href="{{ '/troubleshooting/' | relative_url }}" {% if page.url contains 'troubleshooting' %}class="active"{% endif %}>Troubleshooting</a>
+      <a href="https://github.com/aj-geddes/discord-agent-mcp">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="content" class="main-content" role="main">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      <strong>Discord Agent MCP</strong> &mdash; AI-Powered Discord Server Management
+    </p>
+    <p>
+      <a href="https://github.com/aj-geddes/discord-agent-mcp">GitHub</a> &bull;
+      <a href="{{ '/getting-started/' | relative_url }}">Get Started</a> &bull;
+      <a href="https://github.com/aj-geddes/discord-agent-mcp/issues">Report Issue</a>
+    </p>
+    <p>
+      MIT License &bull; Built with <a href="https://modelcontextprotocol.io/">MCP</a> &amp; <a href="https://discord.js.org/">Discord.js</a>
+    </p>
+  </footer>
+
+  <!-- Analytics placeholder -->
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</body>
+</html>

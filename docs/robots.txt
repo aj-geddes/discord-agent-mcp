@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aj-geddes.github.io/discord-agent-mcp/sitemap.xml

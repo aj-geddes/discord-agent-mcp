@@ -1,0 +1,74 @@
+# Discord Agent MCP - Documentation Site
+# GitHub Pages Jekyll Configuration
+
+title: Discord Agent MCP
+description: "AI-Powered Discord Server Management - 71 tools for automated moderation, channel management, role assignment, and community engagement through the Model Context Protocol"
+tagline: "Automate Your Discord Server with AI"
+url: "https://aj-geddes.github.io"
+baseurl: "/discord-agent-mcp"
+repository: aj-geddes/discord-agent-mcp
+
+# Theme
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO Settings
+author: aj-geddes
+twitter:
+  card: summary_large_image
+social:
+  name: Discord Agent MCP
+  links:
+    - https://github.com/aj-geddes/discord-agent-mcp
+
+# Google verification (add your verification code if needed)
+# google_site_verification: your-verification-code
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      image: /assets/images/discord-mcp-og.png
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Collections for organized content
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Getting Started
+    url: /getting-started/
+  - title: Tools Reference
+    url: /tools/
+  - title: Prompts
+    url: /prompts/
+  - title: Deployment
+    url: /deployment/
+  - title: API Reference
+    url: /api/
+  - title: Troubleshooting
+    url: /troubleshooting/
