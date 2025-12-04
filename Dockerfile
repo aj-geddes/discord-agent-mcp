@@ -43,17 +43,9 @@ USER nodejs
 
 # Environment variables
 ENV NODE_ENV=production \
-    TRANSPORT_MODE=http \
-    HTTP_PORT=3000 \
+    TRANSPORT_MODE=stdio \
     LOG_LEVEL=info \
     LOG_FORMAT=json
-
-# Expose port
-EXPOSE 3000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-    CMD node -e "require('http').get('http://localhost:3000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
 # Start server
 CMD ["node", "dist/server/index.js"]
